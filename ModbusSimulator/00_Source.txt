@@ -1,0 +1,19 @@
+Master:
+	https://www.modbusdriver.com/modpoll.html
+	modpoll-3.15
+
+Slave:
+	https://www.modbusdriver.com/diagslave.html
+	diagslave-3.5
+
+Bat-Files:
+	getcoms.bat	
+		@echo off
+		reg query HKLM\HARDWARE\DEVICEMAP\SERIALCOMM
+	modwrite
+		@echo off
+		C:\Users\DH\MRGA-2.0\test_v00101\ModbusSimulator\modpoll-3.15\win\modpoll.exe "%1" "%2" "%3" "%4" "%5" "%6" "%7" "%8" "%9"
+	modread
+		@echo off
+		C:\Users\DH\MRGA-2.0\test_v00101\ModbusSimulator\diagslave-3.5\win\diagslave.exe "%1" "%2" "%3" "%4" "%5" "%6" "%7" "%8" "%9"
+	
